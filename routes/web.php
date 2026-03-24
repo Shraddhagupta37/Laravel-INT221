@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MyController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -234,3 +235,8 @@ Route::post('/setcookieform', function () {
     $username = request('username'); //retrieving the value from the form input
     return response("Cookie has been set with value: " . $username)->cookie('user', $username, 1); //setting the cookie with the value from the form input
 });
+
+
+// route using controller
+Route::get('/controller', [MyController::class, 'index']);
+Route::get('/controller/show', [MyController::class, 'show']);
