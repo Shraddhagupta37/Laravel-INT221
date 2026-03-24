@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 //import the controllers to use them in the routes
 use App\Http\Controllers\MyController;
@@ -246,3 +247,19 @@ Route::get('/controller/show', [MyController::class, 'show']);
 
 Route::get('/basiccontroller', [BasicController::class, 'greet']);
 Route::get('/basiccontroller/login', [BasicController::class, 'show']);
+Route::get('/signup', [BasicController::class, 'signUp']);
+
+Route::post('/submit-signup', function (Request $request) {
+    $name = $request->input('name');
+    $email = $request->input('email');
+    $password = $request->input('password');
+
+    // Here you can add code to save the user data to the database or perform other actions
+    // return response("Signup successful! Name: " . $name . ", Email: " . $email)->cookie('userEmail', $email, 1);
+
+    //returning a javascript alert with the signup details and then redirecting to the home page
+    return "<script>
+    alert('Signup successful! \\nName: " . $name . ", Email: " . $email . "');
+    window.location.href = '/home';
+    </script>";
+});

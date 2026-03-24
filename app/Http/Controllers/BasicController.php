@@ -14,4 +14,8 @@ class BasicController extends Controller
     public function show() {
         return view('studentLogin');
     }
+
+    public function signUp() {
+        return view('signUp');
+    }
 }
