@@ -8,12 +8,13 @@ use Illuminate\Http\Request;
 
 class MyController extends Controller
 {
-    // method to return a simple string
+    //method to return a simple string
     public function index()
     {
         return "Hello from MyController!";
     }
 
+    //returning a view from controller
     public function show() {
         return view('homePage');
     }

@@ -245,3 +245,4 @@ Route::get('/controller', [MyController::class, 'index']);
 Route::get('/controller/show', [MyController::class, 'show']);
 
 Route::get('/basiccontroller', [BasicController::class, 'greet']);
+Route::get('/basiccontroller/login', [BasicController::class, 'show']);

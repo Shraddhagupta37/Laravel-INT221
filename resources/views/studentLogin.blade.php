@@ -2,7 +2,8 @@
     <!-- Because you are alive, everything is possible. - Thich Nhat Hanh -->
     <h1 style="font-weight:bold">Login to Access the Dashboard</h1>
     <form action="/dashboard/student" method="POST">
-        @csrf
+        <!-- cross-site request forgery token for security -->
+        @csrf  
         <div class="mb-3">
             <label for="email" class="form-label">Email address</label>
             <input type="email" class="form-control" id="email" name="email" required>

@@ -10,4 +10,8 @@ class BasicController extends Controller
     public function greet() {
         return "Hello from BasicController!";
     }
+
+    public function show() {
+        return view('studentLogin');
+    }
 }
