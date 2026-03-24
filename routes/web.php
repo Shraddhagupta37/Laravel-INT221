@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
+//import the controllers to use them in the routes
 use App\Http\Controllers\MyController;
+use App\Http\Controllers\BasicController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -240,3 +243,5 @@ Route::post('/setcookieform', function () {
 // route using controller
 Route::get('/controller', [MyController::class, 'index']);
 Route::get('/controller/show', [MyController::class, 'show']);
+
+Route::get('/basiccontroller', [BasicController::class, 'greet']);
