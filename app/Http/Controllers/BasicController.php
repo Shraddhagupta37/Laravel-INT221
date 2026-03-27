@@ -20,16 +20,29 @@ class BasicController extends Controller
     }
 
     public function submitSignup(Request $request) {
+        // validate the form data
+        $request->validate([
+            'name' => 'required|string|min:2|max:50|regex:/^[a-zA-Z\s]+$/',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.+[_#$!@])[A-Za-z\d_#$!@]$/',
+        ]);
+
         // Retrieve form data
         $name = $request->input('name');
         $email = $request->input('email');
         $password = $request->input('password');
 
-        //to request all the data from the form
+        // to request all the data from the form
         // $formData = $request->all();
         // return $formData; // returns the form data as an associative array (like a json object) to the browser
 
-        // Here you can add code to save the user data to the database or perform other actions
+        // to return few specific data from the form
+        // return response()->json([
+        //     'name' => $request->name,
+        //     'email' => $request->email
+        // ]);
+
+        // Here you can either save the user data to the database, setup authentication, or perform other actions
         // return "Name: " . $name . "<br>Email: " . $email . "<br>Password: " . $password;
         // return response("Signup successful! Name: " . $name . ", Email: " . $email)->cookie('userEmail', $email, 1);
 
