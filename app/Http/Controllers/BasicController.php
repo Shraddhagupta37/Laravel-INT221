@@ -25,6 +25,10 @@ class BasicController extends Controller
         $email = $request->input('email');
         $password = $request->input('password');
 
+        //to request all the data from the form
+        // $formData = $request->all();
+        // return $formData; // returns the form data as an associative array (like a json object) to the browser
+
         // Here you can add code to save the user data to the database or perform other actions
         // return "Name: " . $name . "<br>Email: " . $email . "<br>Password: " . $password;
         // return response("Signup successful! Name: " . $name . ", Email: " . $email)->cookie('userEmail', $email, 1);
