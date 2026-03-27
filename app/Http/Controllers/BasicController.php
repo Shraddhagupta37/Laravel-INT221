@@ -18,4 +18,21 @@ class BasicController extends Controller
     public function signUp() {
         return view('signUp');
     }
+
+    public function submitSignup(Request $request) {
+        // Retrieve form data
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        // Here you can add code to save the user data to the database or perform other actions
+        // return "Name: " . $name . "<br>Email: " . $email . "<br>Password: " . $password;
+        // return response("Signup successful! Name: " . $name . ", Email: " . $email)->cookie('userEmail', $email, 1);
+
+        //returning a javascript alert with the signup details and then redirecting to the home page
+        return "<script>
+        alert('Signup successful! \\nName: " . $name . ", Email: " . $email . "');
+        window.location.href = '/home';
+        </script>";
+    }
 }
