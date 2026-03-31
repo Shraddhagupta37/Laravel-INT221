@@ -23,12 +23,14 @@ class BasicController extends Controller
         // validate the form data
         $request->validate([
             'name' => 'required|string|min:2|max:50|regex:/^[a-zA-Z\s]+$/',
+            'age' => 'required|integer|min:18|max:100',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.+[_#$!@])[A-Za-z\d_#$!@]$/',
+            'password' => 'required|min:6|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[_#$!@?*&])[A-Za-z\d_#$!@?*&]+$/',
         ]);
 
         // Retrieve form data
         $name = $request->input('name');
+        $age = $request->input('age');
         $email = $request->input('email');
         $password = $request->input('password');
 
@@ -48,7 +50,7 @@ class BasicController extends Controller
 
         //returning a javascript alert with the signup details and then redirecting to the home page
         return "<script>
-        alert('Signup successful! \\nName: " . $name . ", Email: " . $email . "');
+        alert('Signup successful! \\nName: " . $name . ", Email: " . $email . ", Age: " . $age . "');
         window.location.href = '/home';
         </script>";
     }

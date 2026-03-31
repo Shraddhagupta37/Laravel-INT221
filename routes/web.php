@@ -249,3 +249,19 @@ Route::get('/basiccontroller', [BasicController::class, 'greet']);
 Route::get('/basiccontroller/login', [BasicController::class, 'show']);
 Route::get('/signup', [BasicController::class, 'signUp']);
 Route::post('/submit-signup', [BasicController::class, 'submitSignup']);
+
+
+// route grouping
+Route::prefix('lpu')->group(function () {
+    Route::get('/courses', function () {
+        return "List of courses at LPU";
+    });
+
+    Route::get('/admissions', function () {
+        return "Admissions information for LPU";
+    });
+
+    Route::get('/contact', function () {
+        return "Contact information for LPU";
+    });
+});
