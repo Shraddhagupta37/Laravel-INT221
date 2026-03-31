@@ -254,14 +254,14 @@ Route::post('/submit-signup', [BasicController::class, 'submitSignup']);
 // route grouping
 Route::prefix('lpu')->group(function () {
     Route::get('/courses', function () {
-        return "List of courses at LPU";
+        return "<h1>List of courses at LPU</h1>";
     });
 
     Route::get('/admissions', function () {
-        return "Admissions information for LPU";
+        return "<h1>Admissions information for LPU</h1>";
     });
 
     Route::get('/contact', function () {
-        return "Contact information for LPU";
+        return "<h1>Contact information for LPU</h1>";
     });
 });
