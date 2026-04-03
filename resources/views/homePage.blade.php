@@ -2,6 +2,9 @@
     <!-- Simplicity is the consequence of refined emotions. - Jean D'Alembert -->
     <h1 style="font-weight:bold">Home Page</h1>
 
+    <!-- using the named route, specified in the routes/web.php -->
+    <a href="{{ route('dash') }}" style="color:blue; font-size:18px;">Go to Dashboard</a>
+
     <!-- using the global variable, specified in the app/Providers/AppServiceProvider -->
     <h2 style="color:orange; font-weight:bold">{{ $University }}</h2> 
     <p style="font-size:20px;">This is the home page of {{ $University }}. 

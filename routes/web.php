@@ -265,3 +265,9 @@ Route::prefix('lpu')->group(function () {
         return "<h1>Contact information for LPU</h1>";
     });
 });
+
+
+// named route
+Route::get('/lpu/dasboard/2026', function() {
+    return view('landingPage');
+})->name('dash');
