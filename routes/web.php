@@ -18,7 +18,7 @@ Route::get('/hello', function () {
     </h1>';
 });
 
-// subrouting (routes withing routes)
+// subrouting (routes within routes)
 Route::get('/lpu/course/btech', function () {
     return "You are enrolled in BTech course at LPU";
 });
