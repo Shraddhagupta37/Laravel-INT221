@@ -125,9 +125,9 @@ Route::get('/student', function () {
 });
 
 // laravel redirections: for authorization and authentication
-// Route::get('/dashboard/admin', function () {
-//     return redirect('/dashboard/student-login');
-// });
+Route::get('/dashboard/admin', function () {
+    return redirect('/dashboard/student-login');
+});
 
 Route::get('/dashboard/student-login', function () {
     return view('studentLogin');
@@ -273,16 +273,16 @@ Route::get('/lpu/dasboard/2026', function() {
 })->name('dash');
 
 
-// CA
-Route::get('/dashboard/{role}', function ($role) {
-    if ($role == 'admin') {
-        return view('adminDashboard');
-    } elseif ($role == 'user') {
-        return view('userDashboard');
-    } else {
-        return "<h1>Access Denied!</h1>";
-    }
-});
+// // CA
+// Route::get('/dashboard/{role}', function ($role) {
+//     if ($role == 'admin') {
+//         return view('adminDashboard');
+//     } elseif ($role == 'user') {
+//         return view('userDashboard');
+//     } else {
+//         return "<h1>Access Denied!</h1>";
+//     }
+// });
 
 
 Route::get('/childtemplate', function () {
