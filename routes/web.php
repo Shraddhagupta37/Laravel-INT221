@@ -125,9 +125,9 @@ Route::get('/student', function () {
 });
 
 // laravel redirections: for authorization and authentication
-Route::get('/dashboard/admin', function () {
-    return redirect('/dashboard/student-login');
-});
+// Route::get('/dashboard/admin', function () {
+//     return redirect('/dashboard/student-login');
+// });
 
 Route::get('/dashboard/student-login', function () {
     return view('studentLogin');
@@ -140,7 +140,7 @@ Route::post('/dashboard/student', function () {
 
 // attaching headers to a route
 //headers are used to pass additional information with the response (metadata)
-//for example, we xan send the information about the author of the page, the description of the page, the keywords for the page, etc. using headers
+//for example, we can send the information about the author of the page, the description of the page, the keywords for the page, etc. using headers
 //seen in network tab in browser's developer tools
 Route::get('/headers', function () {
     return response("This is a page with custom headers")
@@ -271,3 +271,20 @@ Route::prefix('lpu')->group(function () {
 Route::get('/lpu/dasboard/2026', function() {
     return view('landingPage');
 })->name('dash');
+
+
+// CA
+Route::get('/dashboard/{role}', function ($role) {
+    if ($role == 'admin') {
+        return view('adminDashboard');
+    } elseif ($role == 'user') {
+        return view('userDashboard');
+    } else {
+        return "<h1>Access Denied!</h1>";
+    }
+});
+
+
+Route::get('/childtemplate', function () {
+    return view('childTemplate');
+});
