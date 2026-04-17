@@ -24,6 +24,22 @@ class loginController extends Controller
         //     'email' => $request->session()->get('email')
         // ]);
 
-        return redirect('/welcome'); // Redirect to a welcome page after successful login
+        return redirect('/'); // Redirect to a welcome page after successful login
+    }
+
+    public function logout(Request $request)
+    {
+        // Clear the session data
+        $request->session()->flush();
+
+        // Alternatively, you can also forget specific session keys instead of flushing the entire session
+        // $request->session()->forget('username');
+        // $request->session()->forget('email');
+        // $request->session()->forget('password');
+
+        // You can also use the pull method to retrieve and delete a specific session value in one step
+        //session()->pull('username')->pull('email')->pull('password'); 
+
+        return redirect('/'); // Redirect to the welcome page after logout
     }
 }

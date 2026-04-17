@@ -292,7 +292,8 @@ Route::get('/childtemplate', function () {
 
 
 Route::get('/login', function () {
-    return view('loginForm');
+    return view('loginPage');
 });
 
 Route::post('/submit-login', [loginController::class, 'login']);
+Route::get('/logout', [loginController::class, 'logout']);
