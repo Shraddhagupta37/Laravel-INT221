@@ -22,6 +22,7 @@
     </nav>
 
     <div style="margin-top: 150px; margin-bottom: 40px;">
+        @yield('session-user')
         @yield('content')
     </div>
 

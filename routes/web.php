@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 //import the controllers to use them in the routes
 use App\Http\Controllers\MyController;
 use App\Http\Controllers\BasicController;
+use App\Http\Controllers\loginController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -288,3 +289,10 @@ Route::get('/lpu/dasboard/2026', function() {
 Route::get('/childtemplate', function () {
     return view('childTemplate');
 });
+
+
+Route::get('/login', function () {
+    return view('loginForm');
+});
+
+Route::post('/submit-login', [loginController::class, 'login']);
