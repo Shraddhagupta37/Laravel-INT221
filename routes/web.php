@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\MyController;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\MailController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -297,3 +298,7 @@ Route::get('/login', function () {
 
 Route::post('/submit-login', [loginController::class, 'login']);
 Route::get('/logout', [loginController::class, 'logout']);
+
+
+// email
+Route::get('/sendmail', [MailController::class, 'sendMail']);
