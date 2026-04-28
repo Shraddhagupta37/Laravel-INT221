@@ -307,3 +307,4 @@ Route::get('/sendmail', [MailController::class, 'sendMail']);
 
 //working with mysql DB
 Route::get('/grocery/getitems', [GroceryController::class, 'getItems']);
+Route::get('/grocery/getnameprice', [GroceryController::class, 'getNamePrice']);

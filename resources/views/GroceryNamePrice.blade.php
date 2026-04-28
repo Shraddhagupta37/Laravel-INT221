@@ -38,25 +38,27 @@
 </head>
 <body>
     <div>
-        <!-- Act only according to that maxim whereby you can, at the same time, will that it should become a universal law. - Immanuel Kant -->
-        <h1>Grocery Items</h1>
+        <h1>Grocery Items with only Name and Price</h1>
         <table>
-            <tr>
-                <th>ID</th>
+            <tr> 
                 <th>Name</th>
-                <th>Quantity</th>
                 <th>Price</th>
             </tr>
-        
-            @foreach ($items as $item)
+
+            @foreach ($itemsNamePrice as $item)
                 <tr>
-                    <td>{{ $item->id }}</td>
                     <td>{{ $item->name }}</td>
-                    <td>{{ $item->quantity }}</td>
                     <td>${{ $item->price }}</td>
                 </tr>
             @endforeach
         </table>
+    </div>
+
+    <div>
+        <h3>Total Items in the databse: {{ $count }}</h3>
+        <h3>Average Price: ${{ $avgPrice }}</h3>
+        <h3>Max Price: {{ $maxPrice }}, Min Price: {{ $minPrice }}</h3>
+        <h3>Total Value: ${{ $totalValue }}</h3>
     </div>
 </body>
 </html>
