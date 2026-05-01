@@ -9,6 +9,7 @@ use App\Http\Controllers\BasicController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\GroceryController;
+use App\Http\Controllers\UmsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -308,3 +309,6 @@ Route::get('/sendmail', [MailController::class, 'sendMail']);
 //working with mysql DB
 Route::get('/grocery/getitems', [GroceryController::class, 'getItems']);
 Route::get('/grocery/getnameprice', [GroceryController::class, 'getNamePrice']);
+
+//working with mongodb
+Route::get('/students/getstudents', [UmsController::class, 'index']);

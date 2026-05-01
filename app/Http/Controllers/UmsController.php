@@ -12,7 +12,9 @@ class UmsController extends Controller
      */
     public function index()
     {
-        //
+        //controller interacts with the model to fetch data from the database and pass it to the view
+        $students = Student::all();  //fetching all students from the database using the model
+        return view('students', compact('students'));
     }
 
     /**
