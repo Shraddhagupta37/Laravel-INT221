@@ -312,3 +312,4 @@ Route::get('/grocery/getnameprice', [GroceryController::class, 'getNamePrice']);
 
 //working with mongodb
 Route::get('/students/getstudents', [UmsController::class, 'index']);
+
