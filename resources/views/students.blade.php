@@ -1,7 +1,7 @@
 <div>
     <!-- I begin to speak only when I am certain what I will say is not better left unsaid. - Cato the Younger -->
     <h1>Student List</h1>
-    <table border="1">
+    <table border="1" cellpadding="10">
         <tr>
             <th>Reg No</th>
             <th>Name</th>
