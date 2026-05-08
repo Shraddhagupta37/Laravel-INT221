@@ -306,10 +306,15 @@ Route::get('/logout', [loginController::class, 'logout']);
 Route::get('/sendmail', [MailController::class, 'sendMail']);
 
 
-//working with mysql DB
+// working with mysql DB
 Route::get('/grocery/getitems', [GroceryController::class, 'getItems']);
 Route::get('/grocery/getnameprice', [GroceryController::class, 'getNamePrice']);
 
-//working with mongodb
+// working with mongodb
 Route::get('/students/getstudents', [UmsController::class, 'index']);
 
+
+// middleware
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware('auth'); //this route can only be accessed by authenticated users (users who are logged in)
