@@ -316,5 +316,17 @@ Route::get('/students/getstudents', [UmsController::class, 'index']);
 
 // middleware
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware('auth'); //this route can only be accessed by authenticated users (users who are logged in)
+    return view('userDashboard');
+})->middleware('age'); //this route can only be accessed by users who meet the age requirement
+
+
+// group middleware
+Route::middleware(['age'])->group(function () {
+    Route::get('/signup', function () {
+        return view('signUp');
+    });
+
+    Route::get('/login', function () {
+        return view('loginPage');
+    });
+});

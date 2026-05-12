@@ -13,9 +13,14 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         // This is where we can register global middleware that will be applied to all routes.
-        $middleware->append([
+        // $middleware->append([
+        //     'age' => AgeCheck::class, 
+        // ]);
+
+        // This allows us to use 'age' as an alias for the AgeCheck middleware in our routes, i.e. route middleware.
+        $middleware->alias([
             'age' => AgeCheck::class, 
-        ]);
+        ]); 
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
