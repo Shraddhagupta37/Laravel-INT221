@@ -11,6 +11,7 @@ use App\Http\Controllers\MailController;
 use App\Http\Controllers\GroceryController;
 use App\Http\Controllers\UmsController;
 use App\Http\Controllers\APIController;
+use App\Http\Controllers\FileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -338,11 +339,6 @@ Route::get('/fetchapi', [APIController::class, 'fetchapi']);
 
 
 // file upload route
-Route::get('/uploadform', function () {
-    return view('UploadForm');
-});
-
-Route::post('/submit-upload', function (Request $request) {
-    // Handle file upload logic here
-    return "File uploaded successfully!";
-});
+Route::get('/uploadform', [FileController::class, 'uploadForm']);
+Route::post('/submit-upload', [FileController::class, 'upload']);
+Route::get('/downloadfile', [FileController::class, 'download']);
