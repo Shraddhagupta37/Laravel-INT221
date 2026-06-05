@@ -21,6 +21,7 @@ return Application::configure(basePath: dirname(__DIR__))
         // This allows us to use 'age' as an alias for the AgeCheck middleware in our routes, i.e. route middleware.
         $middleware->alias([
             'age' => AgeCheck::class, 
+            'auth.custom' => \App\Http\Middleware\Authentication::class,
         ]); 
     })
     ->withExceptions(function (Exceptions $exceptions): void {
