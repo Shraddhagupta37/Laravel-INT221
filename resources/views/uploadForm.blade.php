@@ -1,6 +1,7 @@
 <div>
     <!-- I have not failed. I've just found 10,000 ways that won't work. - Thomas Edison -->
     <form action="/submit-upload" method="post" enctype="multipart/form-data">
+        @csrf
         <label for="cv">Upload your resume/CV: </label>
         <input type="file" name="cv" id="cv">
         <br><br>

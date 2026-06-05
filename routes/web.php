@@ -341,4 +341,4 @@ Route::get('/fetchapi', [APIController::class, 'fetchapi']);
 // file upload route
 Route::get('/uploadform', [FileController::class, 'uploadForm']);
 Route::post('/submit-upload', [FileController::class, 'upload']);
-Route::get('/downloadfile', [FileController::class, 'download']);
+Route::get('/downloadfile/{filename}', [FileController::class, 'download']);
